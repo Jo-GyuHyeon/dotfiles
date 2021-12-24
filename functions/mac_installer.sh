@@ -21,9 +21,7 @@ cask_apps=(
   "datagrip"
   "visual-studio-code"
 )
-mas_apps=(
-  "KakaoTalk"
-)
+mas_apps=('KakaoTalk')
 
 
 # install brew
@@ -65,7 +63,7 @@ function install_app() {
 
 function install_mas_app() {
   for app in ${mas_apps[@]}; do
-    if ! mas list | grep ${app} &> /dev/null; then
+    if ! mas list | grep "${app}" &> /dev/null; then
       echo "<$app> \033[31;1m"Start Install..."\033[m"
       mas search "${app}" | sed -n '/${app}/p' | sed -nr 's/ ${app}.+//p' | xargs -I{} mas install {}
       echo "<$app> \033[32;1m"Install Finish!!"\033[m"
@@ -78,6 +76,14 @@ function install_mas_app() {
 install_app brew_apps
 install_app cask_apps "--cask"
 install_mas_app
+
+if [[ ! -f $HOME/.sdkman/bin/sdkman-init.sh ]]; then
+  echo "<sdk> \033[31;1m"Start Install..."\033[m"
+  curl -s "https://get.sdkman.io" | bash
+  echo "<sdk> \033[32;1m"Install Finish!!"\033[m"
+else 
+  echo "<sdk> \033[32;1m"Already Installed!!"\033[m"
+fi
 
 cp -r ../nvim ~/.config/
 cp -r ../tmux ~/.config/

@@ -31,3 +31,5 @@ tmux split-window -h -p 50"
 # nvm setup
 export NVM_DIR="$HOME/.nvm" 
 source $(brew --prefix nvm)/nvm.sh
+# sdkman setup
+source "$HOME/.sdkman/bin/sdkman-init.sh"
