@@ -16,26 +16,42 @@ cask_apps=(
   "slack"
   "font-hack-nerd-font"
   "topnotch"
+  "intellij-idea"
+  "datagrip"
+  "visual-studio-code"
 )
 mas_apps=(
   "KakaoTalk"
 )
 
- # install oh-my-zsh
- if [[ -f "~/..zshrc" ]]; then
+
+# install brew
+if ! command -v brew &> /dev/null; then
+  echo "<ohmyzsh> \033[31;1m"Start Install..."\033[m"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$USER/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  echo "<ohmyzsh> \033[32;1m"Install Finish!!"\033[m"
+fi
+
+brew update
+brew upgrade
+
+# install oh-my-zsh
+if [[ -f "~/..zshrc" ]]; then
   echo "<ohmyzsh> \033[31;1m"Start Install..."\033[m"
   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   echo "<ohmyzsh> \033[32;1m"Install Finish!!"\033[m"
- fi
+fi
 
- function install_app() {
-   option=$2
-   name=$1[@]
-   arr=${!name}
+function install_app() {
+  option=$2
+  name=$1[@]
+  arr=${!name}
    for app in ${arr[@]}; do
      if ! brew list ${option} ${app} &> /dev/null; then
       echo "<$app> \033[31;1m"Start Install..."\033[m"
-      if "font-hack-nerd-font" == ${app}; then
+      if "font-hack-nerd-font" == "${app}"; then
         brew tap homebrew/cask-fonts
       fi
       brew install ${option} ${app}
