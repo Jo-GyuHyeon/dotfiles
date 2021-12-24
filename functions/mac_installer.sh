@@ -7,6 +7,7 @@ brew_apps=(
   "zsh-syntax-highlighting"
   "z"
   "lsd"
+  "nvm"
 )
 cask_apps=(
   "google-chrome"
