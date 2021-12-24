@@ -8,6 +8,7 @@ brew_apps=(
   "z"
   "lsd"
   "nvm"
+  "ripgrep"
 )
 cask_apps=(
   "google-chrome"
