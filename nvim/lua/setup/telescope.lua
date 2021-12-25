@@ -9,7 +9,7 @@ require('telescope').setup {
       horizontal = {mirror = false},
       vertical = {mirror = false},
     },
-    find_command = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
+    find_command = {'rg', '--no-heading','--hidden','--with-filename', '--line-number', '--column', '--smart-case'},
     prompt_prefix = " ",
     selection_caret = " ",
     entry_prefix = "  ",
@@ -18,7 +18,8 @@ require('telescope').setup {
     sorting_strategy = "descending",
     layout_strategy = "horizontal",
     file_sorter = require'telescope.sorters'.get_fuzzy_file,
-    file_ignore_patterns = {},
+    file_ignore_patterns = {"node_modules", ".git"},
+    find_files = { hidden = true },
     generic_sorter =require'telescope.sorters'.get_generic_fuzzy_sorter,
     path_display = {},
     winblend = 0,
@@ -47,24 +48,20 @@ require('telescope').setup {
         ["<CR>"] = actions.select_default + actions.center,
       }
     },
-    -- extensions = {
-      --   media_files = {
-        --     filetypes = {"png", "webp", "jpg", "jpeg"},
-        --     find_cmd = "rg" -- find command (defaults to `fd`)
-        --   }
-        -- }
-      }
-    }
+  }
+}
 
-    require'telescope'.setup {
-      extensions = {
-        media_files = {
-          filetypes = {"png", "webp", "jpg", "jpeg"},
-          find_cmd = "rg"
-        }
-      },
-    }
+require'telescope'.setup {
+  extensions = {
+    media_files = {
+      filetypes = {"png", "webp", "jpg", "jpeg"},
+      find_cmd = "rg",
+    },
+    project = {
+      hidden_files = true,
+    },
+  },
+}
 
-
-    require('telescope').load_extension('media_files')
-    require('telescope').load_extension('project')
+require('telescope').load_extension('media_files')
+require('telescope').load_extension('project')
