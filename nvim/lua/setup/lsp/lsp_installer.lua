@@ -3,23 +3,11 @@ if not status_ok then
   return
 end
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = true,
-    -- This sets the spacing and the prefix, obviously.
-    virtual_text = {
-      spacing = 4,
-      prefix = ''
-    }
-  }
-)
-
 lsp_installer.on_server_ready(function(server)
   local opts = {
-    -- on_attach = require("setup.lsp.handlers").on_attach,
-    -- capabilities = require("setup.lsp.handlers").capabilities,
+    on_attach = require("setup.lsp.handlers").on_attach,
+    capabilities = require("setup.lsp.handlers").capabilities,
   }
-
   if server.name == "diagnosticls" then
     local diagnosticls_opts = require("setup.lsp.server_config.diagnosticls")
     opts = vim.tbl_deep_extend("force", diagnosticls_opts.settings.diagnosticls, opts)

@@ -1,7 +1,6 @@
 return {
   settings = {
-
-    Lua = {
+    sumneko_lua = {
       diagnostics = {
         globals = { "vim", "use" },
       },
