@@ -9,7 +9,7 @@ local feedkey = function(key, mode)
 end
 -- Setup nvim-cmp.
 local cmp = require'cmp'
--- local lspkind = require('lspkind')
+local lspkind = require('lspkind')
 
 cmp.setup({
   snippet = {
@@ -59,7 +59,7 @@ cmp.setup({
     { name = "path" },
   },
   formatting = {
-    -- format = lspkind.cmp_format({with_text = true, maxwidth = 50})
+    format = lspkind.cmp_format({with_text = true, maxwidth = 50})
   },
   experimental = {
     ghost_text = true,

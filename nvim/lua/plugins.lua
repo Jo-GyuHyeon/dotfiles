@@ -82,7 +82,7 @@ return require('packer').startup({ function(use) use({'wbthomason/packer.nvim'})
       {'hrsh7th/vim-vsnip'}, -- vim snippet completion
       {'hrsh7th/cmp-vsnip'}, -- vscode sinppet completion
       {'hrsh7th/vim-vsnip-integ'}, -- vscode sinpet tag
-      -- {'onsails/lspkind-nvim'}, -- vscode pictogram lsp kind
+      {'onsails/lspkind-nvim'}, -- vscode pictogram lsp kind
       {'f3fora/cmp-spell', {'hrsh7th/cmp-calc'}, {'hrsh7th/cmp-emoji'} }, -- check spell
     },
   })
