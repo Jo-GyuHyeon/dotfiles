@@ -20,7 +20,7 @@ map("n", "<Tab>q", ":bp <BAR> bd #<Enter>")
 -- Visual Block --
 -- Move text up and down
 map("x", "J", ":move '>+1<CR>gv-gv", { silent = true })
-map("n", "<c-k>", "<Esc>:m .-2<CR>==gi<Esc>", { silent = true })
+map("n", "<A-k>", "<Esc>:m .-2<CR>==gi<Esc>", { silent = true })
 map("n", "<A-j>", "<Esc>:m .+1<CR>==gi<Esc>", { silent = true })
 map("x", "a", "<Esc>ggVG<c-$>")
 
