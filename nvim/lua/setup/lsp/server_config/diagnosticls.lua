@@ -46,13 +46,13 @@ return {
         },
         formatFiletypes = {
           css = 'prettier',
-          javascript = 'prettier',
-          javascriptreact = 'prettier',
+          javascript = 'eslint_d',
+          javascriptreact = 'eslint_d',
           json = 'prettier',
           scss = 'prettier',
           less = 'prettier',
-          typescript = 'prettier',
-          typescriptreact = 'prettier',
+          typescript = 'eslint_d',
+          typescriptreact = 'eslint_d',
           markdown = 'prettier',
         }
       }
