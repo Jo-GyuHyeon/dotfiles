@@ -91,7 +91,7 @@ local mappings = {
     C = { "<cmd>Telescope commands<cr>", "Commands" },
     f = {":Telescope find_files find_command=rg,--ignore,--hidden,--files<cr>", "Find Files"},
     t = {":Telescope live_grep<cr>", "Find By Code"},
-    p = {":Telescope project<cr>", "Show Project List"},
+    p = {":lua require'telescope'.extensions.project.project{}<CR>", "Show Project List"},
   },
 }
 
