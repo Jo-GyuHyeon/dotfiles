@@ -10,6 +10,7 @@ brew_apps=(
   "nvm"
   "ripgrep"
   "htop"
+  "wget"
 )
 cask_apps=(
   "google-chrome"
@@ -90,3 +91,4 @@ fi
 cp -r ../nvim ~/.config/
 cp -r ../tmux ~/.config/
 cp ../shell/.zshrc ~
+cp ../.ideavimrc ~

@@ -28,7 +28,6 @@ lsp_installer.on_server_ready(function(server)
     opts = vim.tbl_deep_extend("force", kotlin_opts.settings.kotlin_server, opts)
   end
 
-
   server:setup(opts)
 end)
 
