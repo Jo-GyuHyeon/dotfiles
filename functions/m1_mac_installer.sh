@@ -23,6 +23,7 @@ cask_apps=(
   "intellij-idea"
   "datagrip"
   "visual-studio-code"
+  "gitkraken"
 )
 mas_apps=('KakaoTalk')
 
