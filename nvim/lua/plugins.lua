@@ -35,6 +35,7 @@ return require('packer').startup({ function(use) use({'wbthomason/packer.nvim'})
   -- Vim Util --
   use({'goolord/alpha-nvim', requires = {'kyazdani42/nvim-web-devicons'}, config = get_setup('alpha')})
   use({'akinsho/toggleterm.nvim', config = get_setup('toggleterm')})
+  use({'terryma/vim-multiple-cursors'})
   -- Explorer --
   use({'kyazdani42/nvim-tree.lua', requires = {'kyazdani42/nvim-web-devicons', opt = true}, config = get_setup('tree') })
   use({'folke/which-key.nvim', config = get_setup('whichkey')})
