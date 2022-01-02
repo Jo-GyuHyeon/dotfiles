@@ -24,6 +24,7 @@ cask_apps=(
   "datagrip"
   "visual-studio-code"
   "gitkraken"
+  "docker"
 )
 mas_apps=('KakaoTalk')
 
