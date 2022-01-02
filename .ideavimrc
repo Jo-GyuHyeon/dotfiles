@@ -20,6 +20,7 @@ nnoremap <Space>lR :action RenameElement<CR>
 "Like lsp"
 nnoremap <Space>le :action ShowErrorDescription<CR>
 nnoremap <Space>ln :action GotoNextError<CR>
+nnoremap <Space>lk :action QuickJavaDoc<CR>
 
 nnoremap s
 
