@@ -1,30 +1,33 @@
 brew_apps=(
-  "mas"
-  "git"
-  "tmux"
-  "powerlevel10k"
-  "zsh-autosuggestions"
-  "zsh-syntax-highlighting"
-  "z"
-  "lsd"
-  "nvm"
-  "ripgrep"
-  "htop"
-  "wget"
+"neovim"
+"mas"
+"git"
+"tmux"
+"romkatv/powerlevel10k/powerlevel10k"
+"zsh-autosuggestions"
+"zsh-syntax-highlighting"
+"z"
+"lsd"
+"nvm"
+"ripgrep"
+"htop"
+"wget"
+"fzf"
+"awscli"
 )
 cask_apps=(
-  "google-chrome"
-  "iterm2"
-  "notion"
-  "postman"
-  "slack"
-  "font-hack-nerd-font"
-  "topnotch"
-  "intellij-idea"
-  "datagrip"
-  "visual-studio-code"
-  "gitkraken"
-  "docker"
+"google-chrome"
+"iterm2"
+"notion"
+"postman"
+"slack"
+"font-hack-nerd-font"
+"topnotch"
+"intellij-idea"
+"datagrip"
+"visual-studio-code"
+"gitkraken"
+"docker"
 )
 mas_apps=('KakaoTalk')
 
@@ -42,7 +45,7 @@ brew update
 brew upgrade
 
 # install oh-my-zsh
-if [[ -f "~/..zshrc" ]]; then
+if [[ -f "~/.zshrc" ]]; then
   echo "<ohmyzsh> \033[31;1m"Start Install..."\033[m"
   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   echo "<ohmyzsh> \033[32;1m"Install Finish!!"\033[m"
@@ -52,8 +55,8 @@ function install_app() {
   option=$2
   name=$1[@]
   arr=${!name}
-   for app in ${arr[@]}; do
-     if ! brew list ${option} ${app} &> /dev/null; then
+  for app in ${arr[@]}; do
+    if ! brew list ${option} ${app} &> /dev/null; then
       echo "<$app> \033[31;1m"Start Install..."\033[m"
       if "font-hack-nerd-font" == "${app}"; then
         brew tap homebrew/cask-fonts
