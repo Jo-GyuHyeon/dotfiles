@@ -2,10 +2,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
-
+export ZSH="$HOME/.oh-my-zsh"
+source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 export TERM=xterm-256color
-export ZSH="/Users/devin/.oh-my-zsh"
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 # use brew 10k
 # ZSH_THEME="robbyrussell"
@@ -13,8 +13,9 @@ plugins=(git)
 
 # source berw zsh plugins
 source $ZSH/oh-my-zsh.sh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source $(brew --prefix)/opt/fzf/install
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 . $(brew --prefix)/etc/profile.d/z.sh
 
 # Alias
