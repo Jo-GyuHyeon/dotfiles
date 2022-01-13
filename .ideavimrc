@@ -18,6 +18,7 @@ nnoremap <Space>sf :action SearchEverywhere<CR>
 nnoremap <Space>st :action FindInPath<CR>
 nnoremap <Space>lR :action RenameElement<CR>
 "Like lsp"
+nnoremap <Space>la :action ShowIntentionActions<CR>
 nnoremap <Space>le :action ShowErrorDescription<CR>
 nnoremap <Space>ln :action GotoNextError<CR>
 nnoremap <Space>lk :action QuickJavaDoc<CR>
