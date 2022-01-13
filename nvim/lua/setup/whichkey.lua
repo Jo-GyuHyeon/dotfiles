@@ -1,11 +1,11 @@
 local wk = require("which-key")
 wk.setup { 
-  plugins = {
-  marks = false,
-  registers = false,
-  spelling = {enabled = false, suggestions = 20},
-  presets = {operators = false, motions = false, text_objects = false, windows = false, nav = false, z = false, g = false}
-}
+  plugins = { 
+    marks = false,
+    registers = false,
+    spelling = {enabled = false, suggestions = 20},
+    presets = {operators = false, motions = false, text_objects = false, windows = false, nav = false, z = false, g = false}
+  }
 }
 local Terminal = require('toggleterm.terminal').Terminal
 local toggle_float = function()
@@ -39,7 +39,7 @@ local mappings = {
     g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
     n = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
     p = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-    P = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
+    k = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Hover Preview Hunk" },
     l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
     r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
     R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
