@@ -44,3 +44,10 @@ Plug 'tcomment_vim'
 Plug 'https://www.vim.org/scripts/script.php?script_id=1173'
 set commentary
 
+"multiple-cursors
+Plug 'https://github.com/terryma/vim-multiple-cursors'
+Plug 'vim-multiple-cursors'
+set multiple-cursors
+xmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-p> <Plug>RemoveOccurrence
+
