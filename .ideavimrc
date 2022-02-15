@@ -22,6 +22,7 @@ nnoremap <Space>la :action ShowIntentionActions<CR>
 nnoremap <Space>le :action ShowErrorDescription<CR>
 nnoremap <Space>ln :action GotoNextError<CR>
 nnoremap <Space>lk :action QuickJavaDoc<CR>
+vnoremap <Space>ef :action ExtractFunction<CR>
 
 nnoremap s
 
