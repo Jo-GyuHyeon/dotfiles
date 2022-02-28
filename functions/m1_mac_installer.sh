@@ -28,6 +28,7 @@ cask_apps=(
 "visual-studio-code"
 "gitkraken"
 "docker"
+"alfred"
 )
 mas_apps=('KakaoTalk')
 
