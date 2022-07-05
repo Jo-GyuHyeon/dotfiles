@@ -1,0 +1,30 @@
+[core]
+	excludesfile = /Users/jo/.gitignore_global
+	editor = vim
+	precomposeunicode = true
+	quotepath = false
+	deitor = vim
+[user]
+	name = Jo-GyuHyeon
+	email = kuhyun1993@gmail.com
+[commit]
+	template = /Users/jo/.stCommitMsg
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[delta]
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    syntax-theme = Monokai Extended
+    navigate = true
+
+[interactive]
+    diffFilter = delta --color-only
